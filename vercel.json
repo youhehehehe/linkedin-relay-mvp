@@ -1,0 +1,19 @@
+{
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "functions": {
+    "app.py": {
+      "maxDuration": 10  # 函数最大执行时长（Vercel免费版上限10秒）
+    }
+  }
+}
